@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  transition: 0.8s;
+}
+
+.mainContainer {
+  background-color: black;
+}
+
+.main {
+  /* box-sizing: border-box; */
+  transition: 1s;
+  /* transform: rotateX(23deg) perspective(700px) skew(7deg, 0deg); */
+  transform-origin: center center;
+  width: 100%;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(./font/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: poppinRegular;
+  src: url(./font/Poppins-Regular.ttf);
+}
+
+.febri-i {
+  z-index: 5;
+  width: fit-content;
+  font-size: 60px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-family: poppins, sans-serif;
+}
+
+.febriStr {
+  opacity: 0;
+  transform: translateY(50px);
+  display: inline-block;
+  transition: all 0.6s ease-in-out;
+}
+
+.febri {
+  transition: box-shadow 0.5s;
+  animation: fadeIn 2s;
+  background: linear-gradient(60deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 60%, rgba(252, 176, 69, 1) 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+
+.febri:hover, .febri-i:hover .febri {
+  box-shadow: 0px 0px 100px purple;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeFebri {
+  background-image:
+}
+
+.fade {
+  opacity: 1;
+  transform: translateY(0);
+  color: white;
+}
+
+nav {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: poppinRegular, sans-serif;
+  position: absolute;
+}
+
+.aboutMe {
+  cursor: pointer;
+  color: white;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 20px;
+  transition: color 0.15s ease-in;
+}
+
+.Contact {
+  color: white;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+.aboutMe:hover,
+.Contact:hover {
+  color: deeppink;
+}
+
+.about {
+  padding: 10px 0;
+  color: white;
+  height: fit-content;
+}
+
+.about h2 {
+  margin-top: 20px;
+  font-family: poppins;
+  text-align: center;
+}
+
+.about p {
+  margin: 10px auto 30px;
+  width: 80%;
+  font-family: poppinRegular, sans;
+}
+
+.contact {
+  padding-bottom: 60px;
+  color: white;
+}
+
+.contact h2 {
+  font-family: poppins, sans;
+  text-align: center;
+}
+
+.contact p {
+  font-family: poppinRegular, sans;
+  text-align: center;
+}
