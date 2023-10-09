@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+:root {
+  --intro-fade-dur: 2s;
+}
+
+@keyframes fadeTextAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes textImportantAnim {
+  0% {
+    color: red;
+  }
+
+  50% {
+    color: red;
+  }
+
+  100% {
+    color: inherit;
+  }
+}
+
+@keyframes alwaysRotateAnim {
+  0% {
+    rotate: 0deg;
+  }
+  0% {
+    rotate: 360deg;
+  }
+}
+
+.bob {
+  animation-iteration-count: infinite;
+  animation-name: alwaysRotateAnim;
+
+  animation-duration: 20s;
+  pointer-events: none;
+  width: 50rem;
+  filter: blur(10rem);
+  aspect-ratio: 1;
+  position: absolute;
+  transform-origin: center;
+  translate: -50% -50%;
+  animation-timing-function: linear;
+}
+
+@keyframes skillBTNAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.skillButton:hover::before {
+  opacity: 1;
+  scale: 1;
+}
+
+.skillButton::before {
+  content: "";
+  position: absolute;
+  display: block;
+  border-color: white;
+  border-style: dashed;
+  border-width: 5px;
+  animation-iteration-count: infinite;
+  animation-name: alwaysRotateAnim;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  left: -9px;
+  top: -9px;
+  opacity: 0;
+  scale: 0.75;
+  transition: all;
+  transition-duration: 0.5s;
+  right: -9px;
+  bottom: -9px;
+  z-index: -1;
+  border-radius: 99999px;
+  background-color: transparent;
+}
+
+.skillProjectShowcase {
+  /* grid-template-rows: 0; */
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+}
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer components {
+  @media (orientation: landscape) {
+    h1 {
+      @apply text-base sm:text-xl lg:text-4xl xl:text-5xl md:text-3xl;
+    }
+
+    p {
+      @apply text-xs md:text-sm xl:text-lg lg:text-base;
+    }
+
+    h2 {
+      @apply text-sm md:text-base xl:text-xl lg:text-lg;
+    }
+    .febriLogoScript {
+      @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+    }
+
+    .text-important:hover {
+      @apply text-[red];
+    }
+
+    nav {
+      @apply h-12 px-5 sm:h-14 md:h-16 lg:h-20 xl:h-32 fixed;
+    }
+
+    .navOptContainer > button {
+      @apply text-xs sm:text-sm md:text-base lg:text-base xl:text-lg;
+    }
+
+    .sliderItem > * {
+      @apply pt-12 pb-5 px-8 sm:pt-14 sm:pb-8 sm:px-11 md:pt-16 md:px-14 md:pb-10 lg:pt-20 lg:px-14 lg:pb-12 xl:pt-32 xl:px-16 xl:pb-14;
+    }
+
+    .skillFloatingIconSize {
+      @apply p-1 md:p-2 xl:p-3 lg:p-3 w-6 sm:w-8 md:w-12 xl:w-16 aspect-square;
+    }
+
+    .skillContainerSize {
+      @apply pt-12 gap-6 pb-5 px-8
+         sm:gap-9  md:gap-12 lg:gap-12 xl:gap-14
+         sm:pt-14 sm:pb-8 sm:px-11 md:pt-16
+         md:px-14 md:pb-10 lg:pt-20 lg:px-14 lg:pb-12
+         xl:pt-32 xl:px-16 xl:pb-14;
+    }
+
+    #bussinesCard {
+      display: grid;
+      grid-template-rows: 1fr 8fr 1fr;
+      aspect-ratio: 3.5/2;
+      @apply w-2/3 bg-white p-5 portrait:block portrait:text-white portrait:bg-transparent;
+    }
+
+    .navOptContainer > button::before {
+      content: "";
+      background-color: white;
+      @apply absolute hover:scale-x-100 scale-x-0 bottom-0 left-0 right-0 h-0.5 transition-all;
+    }
+
+    .text-important {
+      @apply transition-colors  cursor-pointer;
+      animation: textImportantAnim;
+      animation-duration: var(--intro-fade-dur);
+    }
+
+    .articleFloat {
+      @apply sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-2xl mr-1 float-left;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .febriLogoScript {
+      @apply text-5xl;
+    }
+    nav {
+      @apply px-6 pt-5 h-14;
+    }
+
+    h1 {
+      @apply text-3xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+  }
+
+  h1 {
+    @apply font-important;
+  }
+
+  nav {
+    @apply z-30 flex w-full justify-between items-center;
+  }
+
+  .navOptContainer > button {
+    @apply relative;
+  }
+
+  .fancyLink {
+    @apply relative flex w-fit overflow-hidden h-min;
+  }
+  .fancyLink::after {
+    @apply inline-block portrait:h-6 landscape:xl:h-6 landscape:lg:h-6 landscape:md:h-6 landscape:h-4 landscape:sm:h-5 aspect-square transition-all hover:translate-x-0 hover:translate-y-0 -translate-x-[300%] translate-y-[300%];
+    content: "";
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" color="white" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em" style="overflow: visible;"><path fill="currentColor" d="m16.004 9.414-8.607 8.607-1.414-1.414L14.59 8H7.003V6h11v11h-2V9.414Z"></path></svg>');
+  }
+}
+
+.fadeText {
+  animation-duration: var(--intro-fade-dur);
+}
