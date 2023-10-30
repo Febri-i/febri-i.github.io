@@ -1,4 +1,4 @@
-import { type Component, Show } from "solid-js";
+import { Component, Show } from "solid-js";
 import Slider from "./Slider";
 import SliderItem from "./SliderItem";
 import Introduction from "./sliders/Introduction";

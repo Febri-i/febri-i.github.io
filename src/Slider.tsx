@@ -49,7 +49,6 @@ const Slider: Component<SliderProps> = (props) => {
   const [canGo, setCanGo] = createSignal<boolean>(true);
   let containerRef: HTMLDivElement | undefined;
   const doTheJazz = useTheJazz();
-
   const [scrollable, setScrollable] = createSignal<Element[]>([]);
 
   createEffect(() => {
@@ -107,7 +106,7 @@ const Slider: Component<SliderProps> = (props) => {
 
     if (doTheJazz()) {
       setSliderIndex(
-        clamp(indexVal, 0, document.querySelectorAll(".sliderItem").length - 1)
+        clamp(indexVal, 0, document.querySelectorAll(".sliderItem").length - 1),
       );
     }
   };
@@ -125,7 +124,7 @@ const Slider: Component<SliderProps> = (props) => {
       (el) =>
         el.scrollHeight > el.clientHeight &&
         (el.scrollTop < el.scrollHeight - el.clientHeight || delta < 0) &&
-        el.contains(e.target as Element)
+        el.contains(e.target as Element),
     ).length && incrementProgress(delta * TOUCHSENSITIVITY);
 
     beforeTouchY = touch.clientY;

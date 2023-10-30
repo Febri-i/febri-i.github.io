@@ -4,11 +4,11 @@ import { useSliderIdx } from "./Slider";
 
 function Navbar() {
   const [showOpt, setShowOpt] = createSignal<boolean>(false);
-  const [sliderIndex, setSliderIndex] = useSliderIdx();
+  const [_, setSliderIndex] = useSliderIdx();
 
   const doTheJazz = useTheJazz();
 
-  const section: string[] = ["Introduction", "Skill", "Projects", "Contact"];
+  const section: string[] = ["Perkenalan", "Skill", "Projek", "Kontak"];
 
   const changeSect = (idx: number) => {
     if (doTheJazz()) {
