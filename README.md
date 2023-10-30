@@ -1,4 +1,4 @@
-[Screenshot](https://raw.githubusercontent.com/Febri-i/febri-i.github.io/main/thumbnail)
+![Screenshot](https://raw.githubusercontent.com/Febri-i/febri-i.github.io/main/thumbnail)
 Website portofolio saya dibidang front end development
 tool yang saya gunakan:
 
